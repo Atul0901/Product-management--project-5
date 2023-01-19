@@ -17,6 +17,11 @@ mongoose
   .then(() => console.log("MongoDb is Connected"))
   .catch((err) => console.log(err));
 
+app.all('/', (req, res) => {
+    console.log("Just got a request!")
+    res.send('Yo!')
+})
+// app.listen(process.env.PORT || 3000)
 app.use("/", route);
 
 app.listen(process.env.PORT || 3000, function () {
